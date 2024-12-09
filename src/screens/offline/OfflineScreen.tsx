@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { Container, Header, Logo } from './styles';
-import DiamondSvg from '../../assets/svgs/diamond.svg';
+import {Text} from 'react-native';
+import {Container, Header, Logo} from './styles';
+import {DiamondSvg} from '../../assets/svgs';
 
 const OfflineScreen = () => {
   return (
@@ -11,7 +11,9 @@ const OfflineScreen = () => {
         <DiamondSvg width={80} height={80} />
       </Logo>
       <Text>No Connection with Machine</Text>
-      <Text>Make sure puRO is connected to the same Wi-Fi network as your phone</Text>
+      <Text>
+        Make sure puRO is connected to the same Wi-Fi network as your phone
+      </Text>
     </Container>
   );
 };

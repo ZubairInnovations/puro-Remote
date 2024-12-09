@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {Container, Header, Logo, StartButton, ButtonText} from './styles';
-import PuroSvg from '../../assets/svgs/puro.svg';
+import {PuroSvg} from '../../assets/svgs';
 
 const HomeScreen = ({navigation}: any) => {
   return (
