@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Platform, StatusBar} from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.View`
   width: 100%;
   background-color: #1565c0; 
   padding-top: ${Platform.OS === 'ios' ? '50px' : `${StatusBar.currentHeight + 20}px`};
-  padding-bottom: 20px;
+  padding-bottom: 20px; 
   align-items: center; 
 `;
 
@@ -26,17 +26,13 @@ export const Logo = styled.View`
   margin-bottom: 50px; 
 `;
 
-export const LitersText = styled.Text`
-  font-size: 18px;
-  color: black; 
-  margin-bottom: 5px; 
-`;
-
-export const Underline = styled.View`
-  width: 150px; 
-  height: 1px;
-  background-color: black; 
-  margin-bottom: 20px; 
+export const StopButton = styled.TouchableOpacity`
+  background-color: #ffffff; 
+  border: 2px solid red; 
+  padding: 15px 40px;
+  border-radius: 10px;
+  margin-top: 10px; 
+  margin-bottom: 10px;
 `;
 
 export const StartButton = styled.TouchableOpacity`
@@ -45,6 +41,7 @@ export const StartButton = styled.TouchableOpacity`
   padding: 15px 40px;
   border-radius: 10px;
   margin-top: 10px; 
+  margin-bottom: 20px;
 `;
 
 export const ButtonText = styled.Text`
@@ -54,12 +51,11 @@ export const ButtonText = styled.Text`
 `;
 
 export const CenterSvgWrapper = styled.View`
-  margin-top: 100px; 
+  margin-top: 40px; 
   align-items: center;
 `;
 
-export const ManualIconWrapper = styled.View`
-  position: absolute;
-  right: 10px; 
-  bottom: 60px; 
+export const WaterDropWrapper = styled.View`
+  margin-top: 20px; 
+  align-items: center;
 `;
