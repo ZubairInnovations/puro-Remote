@@ -1,19 +1,35 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {Container, Header, Logo} from './styles';
-import {DiamondSvg} from '../../assets/svgs';
+import {
+  Container,
+  HeaderWrapper,
+  Header,
+  Logo,
+  MessageText,
+  InfoText,
+  CenterSvgWrapper,
+  ManualIconWrapper,
+} from './styles';
+import {ManualSvg, LogoSvg, NoConnectionSvg} from '../../assets/svgs';
 
 const OfflineScreen = () => {
   return (
     <Container>
-      <Header>Offline</Header>
+      <HeaderWrapper>
+        <Header>Offline</Header>
+      </HeaderWrapper>
       <Logo>
-        <DiamondSvg width={80} height={80} />
+        <LogoSvg width={150} height={150} />
       </Logo>
-      <Text>No Connection with Machine</Text>
-      <Text>
-        Make sure puRO is connected to the same Wi-Fi network as your phone
-      </Text>
+      <MessageText>No Connection With Machine</MessageText>
+      <InfoText>
+        Make sure puRO is connected to the same Wi-Fi network as your phone.
+      </InfoText>
+      <CenterSvgWrapper>
+        <NoConnectionSvg width={300} height={300} />
+      </CenterSvgWrapper>
+      <ManualIconWrapper>
+        <ManualSvg width={100} height={100} />
+      </ManualIconWrapper>
     </Container>
   );
 };

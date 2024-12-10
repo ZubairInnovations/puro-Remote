@@ -9,14 +9,14 @@ export const Container = styled.View`
 
 export const HeaderWrapper = styled.View`
   width: 100%;
-  background-color: grey; 
-  padding-top: ${Platform.OS === 'ios' ? '50px' : `${StatusBar.currentHeight + 20}px`};
+  background-color: #1565c0; 
+  padding-top: ${Platform.OS === 'ios' ? '50px' : `${StatusBar.currentHeight + 20}px`}; 
   padding-bottom: 20px; 
   align-items: center; 
 `;
 
 export const Header = styled.Text`
-  color: black; 
+  color:  #ffffff; 
   font-size: 26px; 
   font-weight: bold; 
 `;
@@ -44,10 +44,4 @@ export const InfoText = styled.Text`
 export const CenterSvgWrapper = styled.View`
   margin-top: 100px; 
   align-items: center;
-`;
-
-export const ManualIconWrapper = styled.View`
-  position: absolute;
-  right: 10px; 
-  bottom: 60px; 
 `;
