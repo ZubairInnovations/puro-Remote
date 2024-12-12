@@ -4,11 +4,12 @@ const {width} = Dimensions.get('window');
 
 export const DataCard = styled.View`
   height: 60px;
-  border: 1px solid #2196f3;
+  border: 2px solid #2196f3;
   margin-bottom: 8px;
   padding: 16px;
   background-color: #ffffff;
   justify-content: center;
+  border-radius: 30px;
 `;
 
 export const DataText = styled.Text`

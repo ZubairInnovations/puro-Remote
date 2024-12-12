@@ -41,7 +41,7 @@ export const InfoText = styled.Text`
   padding: 0 20px; 
 `;
 
-export const CenterSvgWrapper = styled.View`
+export const CenterImageWrapper = styled.View`
   margin-top: 100px; 
   align-items: center;
 `;

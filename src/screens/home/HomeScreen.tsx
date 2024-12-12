@@ -1,19 +1,18 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {
   Container,
-  HeaderWrapper,
-  Header,
   Logo,
   LitersText,
   Underline,
   StartButton,
   ButtonText,
-  CenterSvgWrapper,
+  CenterImageWrapper,
   ManualIconWrapper,
 } from './styles';
-import {ManualSvg, LogoSvg, ConnectedSvg} from '../../assets/svgs';
 import {useNavigation} from '@react-navigation/native';
+import {Header} from '../../components/header';
+import {ConnectedPng, LogoPng, ManualPng} from '../../assets/images';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -28,23 +27,21 @@ const HomeScreen = () => {
 
   return (
     <Container>
-      <HeaderWrapper>
-        <Header>Connected</Header>
-      </HeaderWrapper>
+      <Header title="Connected" />
       <Logo>
-        <LogoSvg width={150} height={150} />
+        <Image source={LogoPng} style={{width: 155, height: 120}} />
       </Logo>
       <LitersText>Liters to Fill</LitersText>
       <Underline />
       <StartButton onPress={handleNavigateToStartup}>
         <ButtonText>START</ButtonText>
       </StartButton>
-      <CenterSvgWrapper>
-        <ConnectedSvg width={300} height={300} />
-      </CenterSvgWrapper>
+      <CenterImageWrapper>
+        <Image source={ConnectedPng} style={{width: 190, height: 370}} />
+      </CenterImageWrapper>
       <ManualIconWrapper>
         <TouchableOpacity onPress={handleNavigateToOffline}>
-          <ManualSvg width={100} height={100} />
+          <Image source={ManualPng} style={{width: 100, height: 100}} />
         </TouchableOpacity>
       </ManualIconWrapper>
     </Container>
