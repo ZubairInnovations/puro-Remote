@@ -1,4 +1,5 @@
 import React from 'react';
+import {Image} from 'react-native';
 import {
   Container,
   HeaderWrapper,
@@ -6,9 +7,9 @@ import {
   Logo,
   MessageText,
   InfoText,
-  CenterSvgWrapper,
+  CenterImageWrapper,
 } from './styles';
-import {LogoSvg, AlarmSvg} from '../../assets/svgs';
+import {AlarmPng, LogoPng} from '../../assets/images';
 
 const AlarmScreen = () => {
   return (
@@ -17,15 +18,15 @@ const AlarmScreen = () => {
         <Header>Connected</Header>
       </HeaderWrapper>
       <Logo>
-        <LogoSvg width={150} height={150} />
+        <Image source={LogoPng} style={{width: 190, height: 150}} />
       </Logo>
       <MessageText>LOW FEED PRESSURE !!!</MessageText>
       <InfoText>
         Please acknowledge the alarm on the machine touch screen
       </InfoText>
-      <CenterSvgWrapper>
-        <AlarmSvg width={2700} height={270} />
-      </CenterSvgWrapper>
+      <CenterImageWrapper>
+        <Image source={AlarmPng} style={{width: 270, height: 270}} />
+      </CenterImageWrapper>
     </Container>
   );
 };

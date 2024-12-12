@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
+import {Image} from 'react-native';
 import {
   Container,
-  HeaderWrapper,
-  Header,
   Logo,
   StopButton,
   StartButton,
   ButtonText,
-  CenterSvgWrapper,
+  CenterImageWrapper,
   WaterDropWrapper,
+  HeaderWrapper,
+  Header,
+  FlushingText,
 } from './styles';
-import {WaterDropSvg, LogoSvg} from '../../assets/svgs';
 import {useNavigation} from '@react-navigation/native';
-import CardData from '../../components/customModal/customModal';
 import CustomModal from '../../components/customModal/customModal';
+import {LogoPng, MembraneFilterPng} from '../../assets/images';
 
 const StartupScreen = () => {
   const navigation = useNavigation();
@@ -34,23 +35,29 @@ const StartupScreen = () => {
   return (
     <>
       <Container>
-        <HeaderWrapper>
-          <Header>Connected</Header>
+        <HeaderWrapper isRunning={isCardDataVisible}>
+          <Header isRunning={isCardDataVisible}>
+            {isCardDataVisible ? 'puRO is Running...' : 'Connected'}
+          </Header>
         </HeaderWrapper>
         <Logo>
-          <LogoSvg width={150} height={150} />
+          <Image source={LogoPng} style={{width: 190, height: 150}} />
         </Logo>
+        {isCardDataVisible && <FlushingText>Initial Flushing...</FlushingText>}
         <StopButton onPress={handleStop}>
           <ButtonText>Stop</ButtonText>
         </StopButton>
         <StartButton onPress={handleViewData}>
           <ButtonText>View Data</ButtonText>
         </StartButton>
-        <CenterSvgWrapper>
+        <CenterImageWrapper>
           <WaterDropWrapper>
-            <WaterDropSvg width={180} height={180} />
+            <Image
+              source={MembraneFilterPng}
+              style={{width: 200, height: 180}}
+            />
           </WaterDropWrapper>
-        </CenterSvgWrapper>
+        </CenterImageWrapper>
       </Container>
       {isCardDataVisible && (
         <CustomModal
@@ -59,7 +66,6 @@ const StartupScreen = () => {
         />
       )}
     </>
-    
   );
 };
 

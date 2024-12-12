@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import {Dimensions} from 'react-native';
 const {width} = Dimensions.get('window');
 
-export const SafeAreaView = styled.SafeAreaView`
-  background-color: #1565c0;
+export const SafeAreaView = styled.SafeAreaView<{bgColor: string}>`
+  background-color: ${({bgColor}) => bgColor || '#1565c0'};
 `;
 
 export const HeaderContainer = styled.View`
