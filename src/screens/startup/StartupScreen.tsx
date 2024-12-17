@@ -9,8 +9,9 @@ import {
   CenterImageWrapper,
   WaterDropWrapper,
   HeaderWrapper,
+  TopHeader,
   Header,
-  FlushingText,
+  LogicText,
 } from './styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomModal from '../../components/customModal/customModal';
@@ -35,21 +36,23 @@ const StartupScreen = () => {
   return (
     <>
       <Container>
-        <HeaderWrapper isRunning={isCardDataVisible}>
-          <Header isRunning={isCardDataVisible}>
-            {isCardDataVisible ? 'puRO is Running...' : 'Connected'}
-          </Header>
+        <HeaderWrapper>
+          <TopHeader>puRO</TopHeader>
         </HeaderWrapper>
+
+        <Header>puRO is Running...</Header>
         <Logo>
           <Image source={LogoPng} style={{width: 190, height: 150}} />
         </Logo>
-        {isCardDataVisible && <FlushingText>Initial Flushing...</FlushingText>}
+        <LogicText>Logic is Achieved</LogicText>
+
         <StopButton onPress={handleStop}>
           <ButtonText>Stop</ButtonText>
         </StopButton>
         <StartButton onPress={handleViewData}>
           <ButtonText>View Data</ButtonText>
         </StartButton>
+
         <CenterImageWrapper>
           <WaterDropWrapper>
             <Image
@@ -59,6 +62,7 @@ const StartupScreen = () => {
           </WaterDropWrapper>
         </CenterImageWrapper>
       </Container>
+
       {isCardDataVisible && (
         <CustomModal
           visible={isCardDataVisible}

@@ -3,65 +3,39 @@ import styled from 'styled-components/native';
 const {width} = Dimensions.get('window');
 
 export const DataCard = styled.View`
-  height: 60px;
+  width: 100%;
+  height: 40px;
   border: 2px solid #2196f3;
-  margin-bottom: 8px;
-  padding: 16px;
+  margin-bottom: 5px;
+  padding: 5px;
   background-color: #ffffff;
-  justify-content: center;
-  border-radius: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 20px;
 `;
 
 export const DataText = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #333333;
   font-weight: 500;
   text-align: center;
-`;
-
-export const ShowButton = styled.TouchableOpacity`
-  background-color: #2196f3;
-  padding: 15px;
-  border-radius: 10px;
-`;
-
-export const ButtonText = styled.Text`
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+  flex-wrap: wrap;
 `;
 
 export const ModalOverlay = styled.View`
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-top: 50px;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const ModalContent = styled.View`
-  max-height: 60%;
-  width: ${width - 50}px;
+  width: ${width - 70}px;
   background-color: #fff;
-  border-radius: 20px;
   padding: 20px;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 12px;
-`;
-
-export const CloseButton = styled.TouchableOpacity`
-  margin-top: 20px;
-  background-color: #2196f3;
-  padding: 10px;
-  border-radius: 10px;
-`;
-
-export const CloseButtonText = styled.Text`
-  color: #ffffff;
-  font-size: 16px;
-  text-align: center;
+  margin-top: 200px;
 `;
 
 export const styles = StyleSheet.create({

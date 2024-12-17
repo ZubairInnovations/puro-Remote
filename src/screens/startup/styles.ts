@@ -9,23 +9,40 @@ export const Container = styled.View`
 
 export const HeaderWrapper = styled.View`
   width: 100%;
-  background-color: ${({isRunning}) => (isRunning ? '#8BC34A' : '#1565C0')};
+  background-color: #8bc34a;
   padding-top: ${Platform.OS === 'ios'
     ? '50px'
     : `${StatusBar.currentHeight + 20}px`};
-  padding-bottom: 20px;
-  align-items: center;
+  padding-bottom: 10px;
+  align-items: flex-start;
+`;
+
+export const TopHeader = styled.Text`
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
 `;
 
 export const Header = styled.Text`
-  color: ${({isRunning}) => (isRunning ? '#000000' : '#FFFFFF')};
+  background-color: #505e1c;
+  color: #ffffff;
   font-size: 26px;
   font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
 `;
 
 export const Logo = styled.View`
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+export const LogicText = styled.Text`
+  font-size: 15px;
+  color: black;
+  margin-bottom: 20px;
 `;
 
 export const StopButton = styled.TouchableOpacity`
