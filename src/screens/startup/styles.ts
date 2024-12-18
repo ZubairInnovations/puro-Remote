@@ -9,7 +9,7 @@ export const Container = styled.View`
 
 export const HeaderWrapper = styled.View`
   width: 100%;
-  background-color: #8bc34a;
+  background-color: #038173;
   padding-top: ${Platform.OS === 'ios'
     ? '50px'
     : `${StatusBar.currentHeight + 20}px`};
@@ -25,7 +25,7 @@ export const TopHeader = styled.Text`
 `;
 
 export const Header = styled.Text`
-  background-color: #505e1c;
+  background-color: #A9CB82;
   color: #ffffff;
   font-size: 26px;
   font-weight: bold;
