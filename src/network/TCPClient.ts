@@ -59,7 +59,7 @@ export class TCPClient {
         () => {
           console.log('Connected to server.');
           this.mRun = true;
-          this.sendMessage('Your initial message here'); // Initial message
+          this.sendMessage('Welcome to PuRO-Remote'); // Initial message
           resolve();
         }
       );
