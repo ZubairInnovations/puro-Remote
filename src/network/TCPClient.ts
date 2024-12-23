@@ -5,8 +5,7 @@ export interface OnMessageReceived {
 }
 
 export class TCPClient {
-  private serverMessage: string | null = null;
-  private static SERVERIP: string; // Replace with actual server IP
+  private static SERVERIP: string;
   private static SERVERPORT = 1709;
   private socket: TcpSocket.Socket | null = null;
   private mMessageListener: OnMessageReceived | null;
@@ -16,10 +15,6 @@ export class TCPClient {
     this.mMessageListener = listener;
   }
 
-  /**
-   * Sends a message to the server.
-   * @param message The message to send.
-   */
   public sendMessage(message: string): void {
     if (this.socket && !this.socket.destroyed) {
       this.socket.write(message, () => {
@@ -30,9 +25,6 @@ export class TCPClient {
     }
   }
 
-  /**
-   * Stops the TCP client and closes the socket.
-   */
   public stopClient(): void {
     this.mRun = false;
     if (this.socket) {
@@ -43,11 +35,6 @@ export class TCPClient {
     }
   }
 
-  /**
-   * Connects to the TCP server and listens for messages.
-   * @param serverIP The server IP to connect to.
-   * @returns A Promise that resolves when the client connects.
-   */
   public async run(serverIP: string): Promise<void> {
     TCPClient.SERVERIP = serverIP;
 
@@ -64,23 +51,20 @@ export class TCPClient {
         }
       );
 
-      // Handle incoming messages
       this.socket.on('data', (data) => {
-        this.serverMessage = data.toString();
-        console.log('Message received:', this.serverMessage);
+        const message = data.toString();
+        console.log('Message received:', message);
 
         if (this.mMessageListener) {
-          this.mMessageListener.messageReceived(this.serverMessage);
+          this.mMessageListener.messageReceived(message);
         }
       });
 
-      // Handle socket errors
       this.socket.on('error', (error) => {
         console.error('Socket error:', error);
         reject(error);
       });
 
-      // Handle socket close
       this.socket.on('close', () => {
         console.log('Connection closed.');
         this.mRun = false;
